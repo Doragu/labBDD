@@ -16,8 +16,7 @@ public class BasicIntineraryService implements IntineraryService {
         this.period = period;
     }
 
-    @Override
-    public List<LocalTime> findNextDepartures(String departure, String destination, LocalTime startTime) {
+    @Override public List<LocalTime> findNextDepartures(String departure, String destination, LocalTime startTime) {
         List<LocalTime> departures = new ArrayList<>();
 
         for(Line line : timetableService.findLinesThrough(departure, destination)) {

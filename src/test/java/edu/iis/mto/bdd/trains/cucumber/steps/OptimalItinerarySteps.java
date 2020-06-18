@@ -23,7 +23,7 @@ public class OptimalItinerarySteps {
     @Zakładając("^pociągi linii \"(.*)\" z \"(.*)\" odjeżdżają ze stacji \"(.*)\" do \"(.*)\" o$")
     public void givenArrivingTrains(String line, String lineStart, String departure, String destination,
             @Transform(JodaLocalTimeConverter.class) List<LocalTime> departureTimes) {
-        intineraryService = new BasicIntineraryService(new InMemoryTimetableService(), 15);
+        intineraryService = new BasicIntineraryService(new InMemoryTimetableService(), 30);
     }
 
     @Gdy("^chcę podróżować z \"([^\"]*)\" do \"([^\"]*)\" o (.*)$")
