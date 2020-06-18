@@ -2,7 +2,6 @@ package edu.iis.mto.bdd.trains.services;
 
 import edu.iis.mto.bdd.trains.model.Line;
 import org.joda.time.LocalTime;
-import org.joda.time.Period;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +16,8 @@ public class BasicIntineraryService implements IntineraryService {
         this.period = period;
     }
 
-    @Override public List<LocalTime> findNextDepartures(String departure, String destination, LocalTime startTime) {
+    @Override
+    public List<LocalTime> findNextDepartures(String departure, String destination, LocalTime startTime) {
         List<LocalTime> departures = new ArrayList<>();
 
         for(Line line : timetableService.findLinesThrough(departure, destination)) {
